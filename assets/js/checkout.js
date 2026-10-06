@@ -348,7 +348,7 @@ class CheckoutManager {
               </div>
             </div>
             <div style="text-align: right; flex-shrink: 0;">
-              <div style="font-weight: 800; font-size: 1.1rem; color: #2E7D32;">${shipping === 0 ? 'Offerte ✓' : `${shipping.toFixed(2)} €`}</div>
+              <div style="font-weight: 800; font-size: 1.1rem; color: #2E7D32;">${shipping === 0 ? 'Offerte ✓' : shipping.toFixed(2) + ' €'}</div>
               ${shipping === 0 ? '<div style="font-size: 0.72rem; color: #2E7D32; margin-top: 2px;">Dès 50€ d&apos;achat</div>' : ''}
             </div>
           </div>
@@ -545,14 +545,32 @@ class CheckoutManager {
       btn.style.pointerEvents = 'none';
     }
 
-    setTimeout(() => {
-      const order = store.addOrder({
+    setTimeout(async () => {
+      const orderData = {
         total: store.getCartTotal(),
+        subtotal: store.getCartSubtotal(),
         shippingCost: store.getCartShipping(),
         items: store.cart.items.map(i => ({ name: i.name, qty: i.quantity, price: i.price, image: i.image, volume: i.volume })),
         appliedPromo: store.cart.appliedPromo?.code || null,
-        paymentMethod: this.paymentMethod
-      });
+        paymentMethod: this.paymentMethod,
+        firstName: store.user.firstName,
+        lastName: store.user.lastName,
+        email: store.user.email,
+        phone: store.user.phone,
+        address: store.user.address,
+        country: document.getElementById('checkout-country')?.value || store.user.country || 'France'
+      };
+
+      const order = store.addOrder(orderData);
+
+      // Cloud Sync to Supabase
+      if (window.supabaseService) {
+        try {
+          await window.supabaseService.createOrder(order);
+        } catch (err) {
+          console.warn('Supabase order sync error:', err);
+        }
+      }
 
       this.renderOrderSuccess(order);
     }, 1000);

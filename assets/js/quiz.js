@@ -132,6 +132,16 @@ class SkinQuiz {
     // Filter valid products
     recommendedProds = recommendedProds.filter(Boolean);
 
+    // Cloud Sync diagnosis to Supabase
+    if (window.supabaseService) {
+      window.supabaseService.saveQuizDiagnosis({
+        skinType,
+        concern,
+        answers: this.answers,
+        recommendedBundle: recommendedProds.map(p => ({ id: p.id, name: p.name, price: p.price }))
+      });
+    }
+
     const bundleTotal = recommendedProds.reduce((sum, p) => sum + p.price, 0);
     const discountedTotal = Math.round(bundleTotal * 0.85);
 

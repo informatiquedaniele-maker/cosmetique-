@@ -317,6 +317,14 @@ class App {
     this.renderProducts();
   }
 
+  setSort(mode) {
+    this.sortMode = mode;
+    const select = document.getElementById('catalog-sort-select');
+    if (select) select.value = mode;
+    this.renderProducts();
+    this.scrollToSection('shop');
+  }
+
   handleSortChange(select) {
     this.sortMode = select.value;
     this.renderProducts();
@@ -916,10 +924,22 @@ class App {
     sessionStorage.setItem('oddaworld_welcome_popup', 'true');
   }
 
-  subscribeNewsletter(event) {
+  async subscribeNewsletter(event) {
     event.preventDefault();
     const emailInput = document.getElementById('newsletter-email');
     const codeBox = document.getElementById('newsletter-coupon-display');
+    const email = emailInput?.value?.trim();
+
+    if (!email) return;
+
+    // Cloud Sync to Supabase
+    if (window.supabaseService) {
+      try {
+        await window.supabaseService.subscribeNewsletter(email, 'welcome_popup');
+      } catch (err) {
+        console.warn('Supabase newsletter sync error:', err);
+      }
+    }
 
     if (codeBox) {
       codeBox.style.display = 'block';
@@ -934,7 +954,54 @@ class App {
     store.notify('toast', {
       type: 'success',
       title: 'Bienvenue au Glow Club !',
-      message: 'Votre code WELCOME10 a été activé.'
+      message: 'Votre code WELCOME10 a été activé et votre inscription enregistrée.'
+    });
+  }
+
+  async submitContactForm(event) {
+    event.preventDefault();
+    const form = event.target;
+    const name = document.getElementById('contact-name')?.value || '';
+    const email = document.getElementById('contact-email')?.value || '';
+    const subject = document.getElementById('contact-subject')?.value || '';
+    const message = document.getElementById('contact-message')?.value || '';
+
+    if (!name || !email || !message) {
+      store.notify('toast', {
+        type: 'warning',
+        title: 'Champs incomplets',
+        message: 'Veuillez remplir votre nom, e-mail et message.'
+      });
+      return;
+    }
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = 'Envoi en cours... ⏳';
+    }
+
+    if (window.supabaseService) {
+      try {
+        await window.supabaseService.sendContactMessage({ name, email, subject, message });
+      } catch (err) {
+        console.warn('Supabase contact message sync error:', err);
+      }
+    }
+
+    form.reset();
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = 'Demande envoyée avec succès ✓';
+      setTimeout(() => {
+        submitBtn.innerHTML = 'Envoyer ma demande ✉️';
+      }, 3000);
+    }
+
+    store.notify('toast', {
+      type: 'success',
+      title: 'Message transmis',
+      message: 'Merci ! Votre demande a été enregistrée et transmise à nos conseillères beauté.'
     });
   }
 

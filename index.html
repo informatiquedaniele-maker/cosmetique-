@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ODDAWORLD | Cosmétiques Botaniques & Soins Éclat Haute Performance</title>
-  
+
   <!-- SEO & Meta Tags -->
-  <meta name="description" content="Découvrez ODDAWORLD, la marque de cosmétiques clean, vegan et éco-responsable. Formules botaniques cliniquement prouvées pour révéler l'éclat naturel de votre peau chaque jour.">
-  <meta name="keywords" content="cosmetiques, skincare, clean beauty, creme hydratante, serum eclat, bio, vegan, cruelty-free, routine visage, spf 50">
+  <meta name="description"
+    content="Découvrez ODDAWORLD, la marque de cosmétiques clean, vegan et éco-responsable. Formules botaniques cliniquement prouvées pour révéler l'éclat naturel de votre peau chaque jour.">
+  <meta name="keywords"
+    content="cosmetiques, skincare, clean beauty, creme hydratante, serum eclat, bio, vegan, cruelty-free, routine visage, spf 50">
   <meta name="theme-color" content="#192419">
   <meta property="og:title" content="ODDAWORLD | Glow Naturally. Feel Confident Every Day.">
-  <meta property="og:description" content="Clean. Effective. Conscious. Skincare made for you. Formules clean beauty haute performance.">
+  <meta property="og:description"
+    content="Clean. Effective. Conscious. Skincare made for you. Formules clean beauty haute performance.">
   <meta property="og:type" content="website">
 
   <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23283928'><circle cx='12' cy='12' r='10'/></svg>">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23283928'><circle cx='12' cy='12' r='10'/></svg>">
 
   <!-- Core Stylesheets -->
   <link rel="stylesheet" href="assets/css/main.css">
@@ -41,6 +46,7 @@
   }
   </script>
 </head>
+
 <body>
 
   <!-- ========================================================================
@@ -48,10 +54,14 @@
        ======================================================================== -->
   <header class="header-wrapper" id="main-header">
     <div class="container header-container">
-      
+
       <!-- Brand Logo Left -->
       <a href="#hero" class="brand-logo" title="ODDAWORLD">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+          <path d="M2 12h20" />
+        </svg>
         ODDAWORLD
       </a>
 
@@ -60,13 +70,17 @@
         <ul class="nav-links">
           <li>
             <a href="#hero" class="nav-link active" id="nav-home">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+              </svg>
               Home
             </a>
           </li>
           <li><a href="#shop" class="nav-link" onclick="app.filterByCategory('all')">Shop</a></li>
-          <li><a href="#shop" class="nav-link" onclick="app.sortMode='popular'; app.renderProducts();">Bestsellers</a></li>
-          <li><a href="#shop" class="nav-link" onclick="app.sortMode='new'; app.renderProducts();">New Arrivals</a></li>
+          <li><a href="#shop" class="nav-link" onclick="app.setSort('popular');">Bestsellers</a>
+          </li>
+          <li><a href="#shop" class="nav-link" onclick="app.setSort('new');">New Arrivals</a></li>
           <li><a href="#about" class="nav-link">About</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
@@ -75,30 +89,49 @@
       <!-- Right Action Icons -->
       <div class="header-actions">
         <!-- Live Search Button -->
-        <button class="action-btn header-action-desktop" title="Rechercher un soin" onclick="app.scrollToSection('shop'); document.getElementById('catalog-search-input')?.focus();">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <button class="action-btn header-action-desktop" title="Rechercher un soin"
+          onclick="app.scrollToSection('shop'); document.getElementById('catalog-search-input')?.focus();">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.3-4.3" />
+          </svg>
         </button>
 
         <!-- Cart Drawer Toggle with Counter -->
         <button class="action-btn header-action-desktop" id="btn-open-cart" title="Mon Panier" onclick="app.openCart()">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+            <path d="M3 6h18" />
+            <path d="M16 10a4 4 0 0 1-8 0" />
+          </svg>
           <span class="badge-count" id="header-cart-badge">0</span>
         </button>
 
         <!-- Wishlist Button -->
         <button class="action-btn header-action-desktop" title="Mes Favoris" onclick="app.openAccount('wishlist')">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path
+              d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+          </svg>
           <span class="badge-count wishlist-count" id="header-wishlist-badge">2</span>
         </button>
 
         <!-- User Account Profile -->
         <button class="action-btn header-action-desktop" title="Mon Espace Client" onclick="app.openAccount('profile')">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
         </button>
 
         <!-- Mobile Menu Hamburger Button -->
-        <button class="action-btn mobile-menu-toggle" id="btn-mobile-menu" title="Menu" onclick="app.toggleMobileMenu()">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <button class="action-btn mobile-menu-toggle" id="btn-mobile-menu" title="Menu"
+          onclick="app.toggleMobileMenu()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
         </button>
       </div>
 
@@ -110,7 +143,11 @@
   <aside class="mobile-menu-drawer" id="mobile-menu-drawer">
     <div class="mobile-drawer-header">
       <div class="brand-logo" style="padding: 6px 14px; font-size: 0.95rem;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+          <path d="M2 12h20" />
+        </svg>
         ODDAWORLD
       </div>
       <button class="modal-close-btn" style="position: static;" onclick="app.closeMobileMenu()">✕</button>
@@ -126,11 +163,13 @@
           <span>🛍️ Boutique Complète</span>
           <span>→</span>
         </a>
-        <a href="#shop" class="mobile-drawer-link" onclick="app.closeMobileMenu(); app.sortMode='popular'; app.renderProducts();">
+        <a href="#shop" class="mobile-drawer-link"
+          onclick="app.closeMobileMenu(); app.setSort('popular');">
           <span>⭐ Bestsellers Culte</span>
           <span class="badge-pill badge-gold" style="font-size: 0.65rem;">Top</span>
         </a>
-        <a href="#shop" class="mobile-drawer-link" onclick="app.closeMobileMenu(); app.sortMode='new'; app.renderProducts();">
+        <a href="#shop" class="mobile-drawer-link"
+          onclick="app.closeMobileMenu(); app.setSort('new');">
           <span>✨ Nouveautés</span>
           <span class="badge-pill badge-sage" style="font-size: 0.65rem;">New</span>
         </a>
@@ -148,16 +187,20 @@
         </a>
       </nav>
 
-      <div style="padding: 18px; margin-top: 15px; background: #EEF3EB; border-radius: var(--radius-md); text-align: center; border: 1px solid #D8E3D4;">
+      <div
+        style="padding: 18px; margin-top: 15px; background: #EEF3EB; border-radius: var(--radius-md); text-align: center; border: 1px solid #D8E3D4;">
         <span class="badge-pill badge-sage" style="margin-bottom: 8px;">Diagnostic Personnalisé</span>
         <h5 style="font-size: 0.95rem; margin-bottom: 4px;">Votre Routine Sur-Mesure</h5>
-        <p style="font-size: 0.78rem; color: var(--text-secondary); margin-bottom: 12px;">Obtenez votre analyse de peau et bénéficiez de -15% immédiats.</p>
-        <button class="btn-primary" style="width: 100%; justify-content: center; font-size: 0.82rem; padding: 10px;" onclick="app.closeMobileMenu(); skinQuiz.start();">
+        <p style="font-size: 0.78rem; color: var(--text-secondary); margin-bottom: 12px;">Obtenez votre analyse de peau
+          et bénéficiez de -15% immédiats.</p>
+        <button class="btn-primary" style="width: 100%; justify-content: center; font-size: 0.82rem; padding: 10px;"
+          onclick="app.closeMobileMenu(); skinQuiz.start();">
           Lancer le Quiz Beauté ✨
         </button>
       </div>
 
-      <div style="margin-top: 18px; padding: 0 8px; display: flex; flex-direction: column; gap: 6px; font-size: 0.8rem; color: var(--text-muted);">
+      <div
+        style="margin-top: 18px; padding: 0 8px; display: flex; flex-direction: column; gap: 6px; font-size: 0.8rem; color: var(--text-muted);">
         <div>🚚 Livraison offerte dès 50€ d'achat</div>
         <div>🛡️ Garantie éclat 30 jours satisfait/remboursé</div>
         <div>🇫🇷 Formulé et fabriqué en France</div>
@@ -174,7 +217,7 @@
       <div class="container">
         <div class="hero-card">
           <div class="hero-grid">
-            
+
             <!-- Left Editorial Text -->
             <div class="hero-content">
               <span class="section-label">RADIANT SKIN COLLECTION</span>
@@ -183,7 +226,7 @@
                 Feel Confident<br>
                 <span class="script-highlight">Every Day.</span>
               </h1>
-              
+
               <p class="hero-subtitle">
                 Clean. Effective. Conscious.<br>
                 Skincare made for you.
@@ -192,11 +235,17 @@
               <div class="hero-actions">
                 <a href="#shop" class="btn-primary" onclick="app.filterByCategory('all')">
                   SHOP NOW
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                  </svg>
                 </a>
 
                 <button class="btn-secondary-outline" onclick="skinQuiz.start()" title="Faire mon diagnostic de peau">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 11l3 3L22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
                   Diagnostic ✨
                 </button>
               </div>
@@ -211,7 +260,8 @@
             <div class="hero-visual-wrapper">
               <div class="hero-visual-halo"></div>
               <div class="hero-image-container">
-                <img src="assets/images/oddaworld_hero_model_1788781076831.jpg" alt="ODDAWORLD Glow Model" id="hero-model-img">
+                <img src="assets/images/oddaworld_hero_model_1788781076831.jpg" alt="ODDAWORLD Glow Model"
+                  id="hero-model-img">
               </div>
             </div>
 
@@ -226,7 +276,7 @@
          ======================================================================== -->
     <section class="categories-section" id="categories">
       <div class="container">
-        
+
         <div class="section-header-row">
           <div class="section-header-title">
             <h2>Shop By Category</h2>
@@ -254,7 +304,8 @@
         <div class="quiz-banner-content">
           <span class="badge-pill badge-sage" style="margin-bottom: 12px;">Diagnostic Scientifique Gratuit</span>
           <h2>Trouvez votre Rituel Sur-Mesure</h2>
-          <p>Chaque peau possède une signature unique. En moins de 2 minutes, analysez vos besoins cutanés et recevez des recommandations ciblées avec <strong>-15% sur votre routine personnalisée</strong>.</p>
+          <p>Chaque peau possède une signature unique. En moins de 2 minutes, analysez vos besoins cutanés et recevez
+            des recommandations ciblées avec <strong>-15% sur votre routine personnalisée</strong>.</p>
           <button class="btn-primary" onclick="skinQuiz.start()">
             Faire mon diagnostic de peau ✨
           </button>
@@ -268,7 +319,7 @@
          ======================================================================== -->
     <section class="catalog-section" id="shop">
       <div class="container">
-        
+
         <div class="section-header-row" style="margin-bottom: 16px;">
           <div>
             <span class="section-label">CATALOGUE OFFICIEL</span>
@@ -279,10 +330,12 @@
 
         <!-- Toolbar: Filters & Sorting -->
         <div class="catalog-toolbar">
-          
+
           <!-- Skin Type Pills -->
           <div class="filter-pills-row">
-            <span style="font-size: 0.82rem; font-weight: 700; color: var(--primary-forest); margin-right: 8px; text-transform: uppercase;">Type de Peau :</span>
+            <span
+              style="font-size: 0.82rem; font-weight: 700; color: var(--primary-forest); margin-right: 8px; text-transform: uppercase;">Type
+              de Peau :</span>
             <button class="filter-pill active" onclick="app.filterBySkinType('all', this)">Tous</button>
             <button class="filter-pill" onclick="app.filterBySkinType('dry', this)">Peau Sèche</button>
             <button class="filter-pill" onclick="app.filterBySkinType('mixed', this)">Peau Mixte</button>
@@ -293,18 +346,28 @@
           <!-- Search & Sort Controls -->
           <div class="catalog-controls">
             <div class="search-input-wrapper">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-              <input type="text" id="catalog-search-input" placeholder="Rechercher un soin, un ingrédient..." oninput="app.handleSearchInput(this)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.3-4.3" />
+              </svg>
+              <input type="text" id="catalog-search-input" placeholder="Rechercher un soin, un ingrédient..."
+                oninput="app.handleSearchInput(this)">
             </div>
 
             <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
               <button class="filter-pill" onclick="app.openComparator()">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 4px;"><path d="M16 3h5v5"/><path d="M8 21H3v-5"/><path d="M21 3l-7 7"/><path d="M3 21l7-7"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  style="vertical-align: middle; margin-right: 4px;">
+                  <path d="M16 3h5v5" />
+                  <path d="M8 21H3v-5" />
+                  <path d="M21 3l-7 7" />
+                  <path d="M3 21l7-7" />
+                </svg>
                 Comparateur (<span id="compare-count-badge">0</span>)
               </button>
 
               <div class="sort-select-wrapper">
-                <select onchange="app.handleSortChange(this)">
+                <select id="catalog-sort-select" onchange="app.handleSortChange(this)">
                   <option value="popular">Trier par : Popularité (Bestsellers)</option>
                   <option value="rating">Trier par : Mieux Notés (★)</option>
                   <option value="price-asc">Prix : Croissant</option>
@@ -335,30 +398,39 @@
         <div class="about-grid">
           <div>
             <span class="section-label">NOTRE MANIFESTE</span>
-            <h2 style="font-size: 2.6rem; margin-bottom: 20px; line-height: 1.2;">La Beauté Consciente Sans Concession</h2>
+            <h2 style="font-size: 2.6rem; margin-bottom: 20px; line-height: 1.2;">La Beauté Consciente Sans Concession
+            </h2>
             <p style="color: var(--text-secondary); margin-bottom: 18px; font-size: 1.05rem;">
-              Chez <strong>ODDAWORLD</strong>, nous croyons qu'une peau rayonnante ne devrait jamais exiger de compromis entre pureté botanique et rigueur dermatologique.
+              Chez <strong>ODDAWORLD</strong>, nous croyons qu'une peau rayonnante ne devrait jamais exiger de compromis
+              entre pureté botanique et rigueur dermatologique.
             </p>
             <p style="color: var(--text-secondary); margin-bottom: 24px; font-size: 0.95rem; line-height: 1.6;">
-              Chacune de nos formules est élaborée et fabriquée en France, en sélectionnant des actifs végétaux sourcés de manière éthique, biomimétiques de la structure cutanée et encapsulés dans des packagings recyclables à l'infini.
+              Chacune de nos formules est élaborée et fabriquée en France, en sélectionnant des actifs végétaux sourcés
+              de manière éthique, biomimétiques de la structure cutanée et encapsulés dans des packagings recyclables à
+              l'infini.
             </p>
 
             <div class="about-stats-grid">
-              <div style="background: var(--bg-surface-glass); padding: 18px; border-radius: var(--radius-md); border: 1px solid var(--border-glass);">
+              <div
+                style="background: var(--bg-surface-glass); padding: 18px; border-radius: var(--radius-md); border: 1px solid var(--border-glass);">
                 <div style="font-size: 1.5rem; color: var(--primary-forest); font-weight: 700;">100%</div>
                 <div style="font-size: 0.85rem; font-weight: 600;">Végane & Cruelty-Free</div>
-                <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;">Certifié sans tests sur animaux.</p>
+                <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;">Certifié sans tests sur
+                  animaux.</p>
               </div>
-              <div style="background: var(--bg-surface-glass); padding: 18px; border-radius: var(--radius-md); border: 1px solid var(--border-glass);">
+              <div
+                style="background: var(--bg-surface-glass); padding: 18px; border-radius: var(--radius-md); border: 1px solid var(--border-glass);">
                 <div style="font-size: 1.5rem; color: var(--primary-forest); font-weight: 700;">0%</div>
                 <div style="font-size: 0.85rem; font-weight: 600;">Perturbateurs Toxiques</div>
-                <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;">Sans parabènes ni phtalates.</p>
+                <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;">Sans parabènes ni phtalates.
+                </p>
               </div>
             </div>
           </div>
 
           <div style="position: relative;">
-            <img src="assets/images/oddaworld_cleanser_1788781096568.jpg" alt="Botanical Ingredients" style="border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); width: 100%;">
+            <img src="assets/images/oddaworld_cleanser_1788781096568.jpg" alt="Botanical Ingredients"
+              style="border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); width: 100%;">
           </div>
         </div>
       </div>
@@ -370,7 +442,7 @@
          ======================================================================== -->
     <section class="section-padding" id="blog" style="background: rgba(247, 246, 242, 0.7);">
       <div class="container">
-        
+
         <div class="section-header-row">
           <div>
             <span class="section-label">JOURNAL DE BEAUTÉ</span>
@@ -391,11 +463,12 @@
          ======================================================================== -->
     <section class="section-padding">
       <div class="container">
-        
+
         <div style="text-align: center; max-width: 600px; margin: 0 auto 36px;">
           <span class="section-label" style="justify-content: center;">COMMUNAUTÉ INSTAGRAM & TIKTOK</span>
           <h2 style="font-size: 2.2rem; margin-bottom: 8px;">Rejoignez le #OddaGlow</h2>
-          <p style="color: var(--text-secondary);">Mentionnez <strong>@oddaworld</strong> sur vos photos et vidéos de rituels pour être mis à l'honneur et recevoir des soins gratuits.</p>
+          <p style="color: var(--text-secondary);">Mentionnez <strong>@oddaworld</strong> sur vos photos et vidéos de
+            rituels pour être mis à l'honneur et recevoir des soins gratuits.</p>
         </div>
 
         <div class="ugc-grid" id="ugc-grid">
@@ -412,12 +485,12 @@
     <section class="section-padding" id="contact">
       <div class="container">
         <div class="contact-grid">
-          
+
           <!-- FAQ Left -->
           <div>
             <span class="section-label">QUESTIONS FRÉQUENTES</span>
             <h2 style="font-size: 2.2rem; margin-bottom: 24px;">Tout Savoir sur ODDAWORLD</h2>
-            
+
             <div id="faq-container">
               <!-- Populated via app.renderFAQ() -->
             </div>
@@ -426,29 +499,31 @@
           <!-- Contact Form Right -->
           <div class="glass-card" style="padding: 34px;">
             <h3 style="font-size: 1.6rem; margin-bottom: 8px;">Une Question Spécifique ?</h3>
-            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 22px;">Notre équipe de dermatologues et conseillères beauté vous répond sous 24h ouvrées.</p>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 22px;">Notre équipe de
+              dermatologues et conseillères beauté vous répond sous 24h ouvrées.</p>
 
-            <form onsubmit="event.preventDefault(); store.notify('toast', {type:'success', title:'Message envoyé', message:'Merci ! Votre demande a été transmise à notre service client.'}); this.reset();">
+            <form id="contact-form" onsubmit="app.submitContactForm(event)">
               <div class="form-group">
                 <label>Nom & Prénom</label>
-                <input type="text" class="form-control" required placeholder="Votre nom">
+                <input type="text" class="form-control" id="contact-name" required placeholder="Votre nom">
               </div>
               <div class="form-group">
                 <label>Adresse e-mail</label>
-                <input type="email" class="form-control" required placeholder="votre.email@domaine.com">
+                <input type="email" class="form-control" id="contact-email" required placeholder="votre.email@domaine.com">
               </div>
               <div class="form-group">
                 <label>Sujet</label>
-                <select class="form-control">
-                  <option>Conseil diagnostic & Routine personnalisée</option>
-                  <option>Suivi de commande & Livraison</option>
-                  <option>Information sur la composition INCI</option>
-                  <option>Retours & Remboursements 30 jours</option>
+                <select class="form-control" id="contact-subject">
+                  <option value="Conseil diagnostic & Routine personnalisée">Conseil diagnostic & Routine personnalisée</option>
+                  <option value="Suivi de commande & Livraison">Suivi de commande & Livraison</option>
+                  <option value="Information sur la composition INCI">Information sur la composition INCI</option>
+                  <option value="Retours & Remboursements 30 jours">Retours & Remboursements 30 jours</option>
                 </select>
               </div>
               <div class="form-group">
                 <label>Votre Message</label>
-                <textarea class="form-control" rows="4" required placeholder="Expliquez-nous votre besoin..."></textarea>
+                <textarea class="form-control" id="contact-message" rows="4" required
+                  placeholder="Expliquez-nous votre besoin..."></textarea>
               </div>
               <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; padding: 12px;">
                 Envoyer ma demande ✉️
@@ -468,44 +543,77 @@
        ======================================================================== -->
   <footer id="main-footer" style="background: #192419; color: #FFF; padding: 80px 0 40px; margin-top: 40px;">
     <div class="container">
-      
+
       <!-- Top Columns -->
       <div class="footer-grid">
-        
+
         <div>
           <!-- Bottom Logo Matching Mockup: Globe Icon + ODDAWORLD -->
-          <div style="display: flex; align-items: center; gap: 10px; font-size: 1.4rem; font-weight: 700; letter-spacing: 2px; margin-bottom: 16px;">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+          <div
+            style="display: flex; align-items: center; gap: 10px; font-size: 1.4rem; font-weight: 700; letter-spacing: 2px; margin-bottom: 16px;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+              <path d="M2 12h20" />
+            </svg>
             ODDAWORLD
           </div>
           <p style="color: #A3B5A1; font-size: 0.9rem; line-height: 1.6; max-width: 320px; margin-bottom: 20px;">
-            Clean. Effective. Conscious. Cosmétiques botaniques haut de gamme formulés pour révéler l'éclat de votre peau au quotidien.
+            Clean. Effective. Conscious. Cosmétiques botaniques haut de gamme formulés pour révéler l'éclat de votre
+            peau au quotidien.
           </p>
           <!-- Social Media Links -->
           <div class="footer-social-links">
-            <a href="https://instagram.com/oddaworld" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram @oddaworld" aria-label="Instagram">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            <a href="https://instagram.com/oddaworld" target="_blank" rel="noopener noreferrer" class="social-link"
+              title="Instagram @oddaworld" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
             </a>
-            <a href="https://tiktok.com/@oddaworld" target="_blank" rel="noopener noreferrer" class="social-link" title="TikTok @oddaworld" aria-label="TikTok">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.13 8.13 0 0 0 4.78 1.53V6.77a4.85 4.85 0 0 1-1.01-.08z"/></svg>
+            <a href="https://tiktok.com/@oddaworld" target="_blank" rel="noopener noreferrer" class="social-link"
+              title="TikTok @oddaworld" aria-label="TikTok">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.13 8.13 0 0 0 4.78 1.53V6.77a4.85 4.85 0 0 1-1.01-.08z" />
+              </svg>
             </a>
-            <a href="https://facebook.com/oddaworld" target="_blank" rel="noopener noreferrer" class="social-link" title="Facebook ODDAWORLD" aria-label="Facebook">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            <a href="https://facebook.com/oddaworld" target="_blank" rel="noopener noreferrer" class="social-link"
+              title="Facebook ODDAWORLD" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg>
             </a>
-            <a href="https://youtube.com/@oddaworld" target="_blank" rel="noopener noreferrer" class="social-link" title="YouTube ODDAWORLD" aria-label="YouTube">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.96-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+            <a href="https://youtube.com/@oddaworld" target="_blank" rel="noopener noreferrer" class="social-link"
+              title="YouTube ODDAWORLD" aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.96-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
+                <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white" />
+              </svg>
             </a>
-            <a href="https://pinterest.com/oddaworld" target="_blank" rel="noopener noreferrer" class="social-link" title="Pinterest ODDAWORLD" aria-label="Pinterest">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+            <a href="https://pinterest.com/oddaworld" target="_blank" rel="noopener noreferrer" class="social-link"
+              title="Pinterest ODDAWORLD" aria-label="Pinterest">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z" />
+              </svg>
             </a>
-            <a href="https://x.com/oddaworld" target="_blank" rel="noopener noreferrer" class="social-link" title="X / Twitter @oddaworld" aria-label="X Twitter">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            <a href="https://x.com/oddaworld" target="_blank" rel="noopener noreferrer" class="social-link"
+              title="X / Twitter @oddaworld" aria-label="X Twitter">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
             </a>
           </div>
         </div>
 
         <div>
-          <h5 style="font-size: 0.95rem; font-family: var(--font-sans); margin-bottom: 18px; color: #FFF; text-transform: uppercase; letter-spacing: 1px;">Boutique</h5>
+          <h5
+            style="font-size: 0.95rem; font-family: var(--font-sans); margin-bottom: 18px; color: #FFF; text-transform: uppercase; letter-spacing: 1px;">
+            Boutique</h5>
           <ul style="display: flex; flex-direction: column; gap: 10px; font-size: 0.88rem; color: #A3B5A1;">
             <li><a href="#shop" onclick="app.filterByCategory('cleansers')">Nettoyants Visage</a></li>
             <li><a href="#shop" onclick="app.filterByCategory('serums')">Sérums Éclat</a></li>
@@ -517,7 +625,9 @@
         </div>
 
         <div>
-          <h5 style="font-size: 0.95rem; font-family: var(--font-sans); margin-bottom: 18px; color: #FFF; text-transform: uppercase; letter-spacing: 1px;">Maison</h5>
+          <h5
+            style="font-size: 0.95rem; font-family: var(--font-sans); margin-bottom: 18px; color: #FFF; text-transform: uppercase; letter-spacing: 1px;">
+            Maison</h5>
           <ul style="display: flex; flex-direction: column; gap: 10px; font-size: 0.88rem; color: #A3B5A1;">
             <li><a href="#about">Notre Histoire</a></li>
             <li><a href="#blog">Journal de Beauté</a></li>
@@ -527,7 +637,9 @@
         </div>
 
         <div>
-          <h5 style="font-size: 0.95rem; font-family: var(--font-sans); margin-bottom: 18px; color: #FFF; text-transform: uppercase; letter-spacing: 1px;">Confiance</h5>
+          <h5
+            style="font-size: 0.95rem; font-family: var(--font-sans); margin-bottom: 18px; color: #FFF; text-transform: uppercase; letter-spacing: 1px;">
+            Confiance</h5>
           <ul style="display: flex; flex-direction: column; gap: 10px; font-size: 0.88rem; color: #A3B5A1;">
             <li>Livraison Offerte dès 50€</li>
             <li>Garantie Satisfaction 30 Jours</li>
@@ -540,12 +652,21 @@
       </div>
 
       <!-- Bottom Bar -->
-      <div class="flex-between" style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 30px; font-size: 0.82rem; color: #788B76; flex-wrap: wrap; gap: 14px;">
+      <div class="flex-between"
+        style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 30px; font-size: 0.82rem; color: #788B76; flex-wrap: wrap; gap: 14px;">
         <div>© 2026 ODDAWORLD Inc. Tous droits réservés.</div>
+        <div id="supabase-status-badge" style="font-size: 0.78rem; display: flex; align-items: center; background: rgba(255,255,255,0.06); padding: 5px 14px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.12); color: #A5D6A7;">
+          <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:#4CAF50; margin-right:8px; box-shadow: 0 0 8px #4CAF50;"></span> Supabase Cloud Sync : Connexion...
+        </div>
         <div style="display: flex; gap: 20px;">
-          <a href="javascript:void(0)" onclick="store.notify('toast', {type:'info', title:'Mentions Légales', message:'ODDAWORLD SAS, Capital 50.000€, RCS Paris B 982 120 441.'})">Mentions Légales</a>
-          <a href="javascript:void(0)" onclick="store.notify('toast', {type:'info', title:'CGV', message:'Conditions Générales de Vente conformes au droit français.'})">CGV</a>
-          <a href="javascript:void(0)" onclick="store.notify('toast', {type:'info', title:'Confidentialité & RGPD', message:'Vos données sont strictement protégées et jamais partagées.'})">Politique RGPD</a>
+          <a href="javascript:void(0)"
+            onclick="store.notify('toast', {type:'info', title:'Mentions Légales', message:'ODDAWORLD SAS, Capital 50.000€, RCS Paris B 982 120 441.'})">Mentions
+            Légales</a>
+          <a href="javascript:void(0)"
+            onclick="store.notify('toast', {type:'info', title:'CGV', message:'Conditions Générales de Vente conformes au droit français.'})">CGV</a>
+          <a href="javascript:void(0)"
+            onclick="store.notify('toast', {type:'info', title:'Confidentialité & RGPD', message:'Vos données sont strictement protégées et jamais partagées.'})">Politique
+            RGPD</a>
         </div>
       </div>
 
@@ -560,7 +681,7 @@
   <!-- 1. CART DRAWER (Slide-Over) -->
   <div class="cart-drawer-overlay" id="cart-drawer-overlay" onclick="app.closeCart()"></div>
   <div class="cart-drawer" id="cart-drawer">
-    
+
     <div class="cart-header">
       <h3>Votre Rituel Panier</h3>
       <button class="modal-close-btn" style="position: static;" onclick="app.closeCart()">✕</button>
@@ -662,17 +783,23 @@
 
   <!-- 6. VIDEO ROUTINE MODAL -->
   <div class="modal-overlay" id="video-modal">
-    <div class="modal-content-card" style="max-width: 720px; background: #182418; color: #FFF; padding: 40px; text-align: center;">
-      <button class="modal-close-btn" style="background: rgba(255,255,255,0.2); color: #FFF;" onclick="app.closeVideoModal()">✕</button>
+    <div class="modal-content-card"
+      style="max-width: 720px; background: #182418; color: #FFF; padding: 40px; text-align: center;">
+      <button class="modal-close-btn" style="background: rgba(255,255,255,0.2); color: #FFF;"
+        onclick="app.closeVideoModal()">✕</button>
       <span class="badge-pill badge-gold" style="margin-bottom: 14px;">Rituel Visuel Démonstration</span>
       <h3 style="font-size: 1.8rem; color: #FFF; margin-bottom: 12px;">Gestuelle Sensorielle ODDAWORLD</h3>
       <p style="color: #A3B5A1; font-size: 0.92rem; max-width: 500px; margin: 0 auto 24px;">
-        Découvrez les mouvements de drainage lymphatique doux recommandés pour optimiser l'absorption des céramides et relancer la micro-circulation.
+        Découvrez les mouvements de drainage lymphatique doux recommandés pour optimiser l'absorption des céramides et
+        relancer la micro-circulation.
       </p>
-      
-      <div style="width: 100%; aspect-ratio: 16/9; background: #0E160E; border-radius: var(--radius-lg); overflow: hidden; position: relative; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.15);">
-        <img src="assets/images/oddaworld_hero_model_1788781076831.jpg" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.75;">
-        <div style="position: absolute; width: 70px; height: 70px; border-radius: 50%; background: #FFF; color: #192419; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; cursor: pointer; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+
+      <div
+        style="width: 100%; aspect-ratio: 16/9; background: #0E160E; border-radius: var(--radius-lg); overflow: hidden; position: relative; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.15);">
+        <img src="assets/images/oddaworld_hero_model_1788781076831.jpg"
+          style="width: 100%; height: 100%; object-fit: cover; opacity: 0.75;">
+        <div
+          style="position: absolute; width: 70px; height: 70px; border-radius: 50%; background: #FFF; color: #192419; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; cursor: pointer; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
           ▶
         </div>
       </div>
@@ -715,12 +842,14 @@
       <span class="badge-pill badge-gold" style="margin-bottom: 12px;">Offre Privée de Bienvenue</span>
       <h3 style="font-size: 1.85rem; margin-bottom: 10px;">Rejoignez le Glow Club</h3>
       <p style="color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 24px;">
-        Recevez immédiatement un <strong>bon de réduction de -10%</strong> sur votre première commande et nos conseils d'expertes en avant-première.
+        Recevez immédiatement un <strong>bon de réduction de -10%</strong> sur votre première commande et nos conseils
+        d'expertes en avant-première.
       </p>
 
       <form onsubmit="app.subscribeNewsletter(event)">
         <div class="form-group">
-          <input type="email" class="form-control" id="newsletter-email" required placeholder="Votre adresse e-mail personnelle" style="text-align: center;">
+          <input type="email" class="form-control" id="newsletter-email" required
+            placeholder="Votre adresse e-mail personnelle" style="text-align: center;">
         </div>
         <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; padding: 13px;">
           Débloquer mes -10% immédiats ✨
@@ -734,13 +863,16 @@
   <!-- 10. SKINCARE ASSISTANT CHATBOT -->
   <div class="chat-widget-toggle" onclick="chatbot.toggle()" title="Discuter avec notre Conseillère Beauté">
     <div class="chat-pulse-indicator"></div>
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"/></svg>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z" />
+    </svg>
   </div>
 
   <div class="chat-window" id="chat-window">
     <div class="chat-header">
       <div style="display: flex; align-items: center; gap: 10px;">
-        <div style="width: 32px; height: 32px; border-radius: 50%; background: #FFF; color: #192419; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem;">
+        <div
+          style="width: 32px; height: 32px; border-radius: 50%; background: #FFF; color: #192419; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem;">
           ✨
         </div>
         <div>
@@ -753,19 +885,23 @@
 
     <div class="chat-messages" id="chat-messages">
       <div class="chat-msg bot">
-        Bonjour ! Je suis votre assistante beauté ODDAWORLD ✨ Que puis-je faire pour illuminer votre rituel de soin aujourd'hui ?
+        Bonjour ! Je suis votre assistante beauté ODDAWORLD ✨ Que puis-je faire pour illuminer votre rituel de soin
+        aujourd'hui ?
       </div>
     </div>
 
     <div class="chat-suggestions">
-      <button class="suggestion-chip" onclick="chatbot.sendSuggestion('Quelle routine pour ma peau ?')">Quelle routine ?</button>
-      <button class="suggestion-chip" onclick="chatbot.sendSuggestion('Avez-vous un code promo ?')">Code promo ?</button>
+      <button class="suggestion-chip" onclick="chatbot.sendSuggestion('Quelle routine pour ma peau ?')">Quelle routine
+        ?</button>
+      <button class="suggestion-chip" onclick="chatbot.sendSuggestion('Avez-vous un code promo ?')">Code promo
+        ?</button>
       <button class="suggestion-chip" onclick="chatbot.sendSuggestion('Peau sensible')">Peau sensible</button>
       <button class="suggestion-chip" onclick="chatbot.sendSuggestion('Où est mon colis ?')">Suivi colis</button>
     </div>
 
     <div class="chat-input-bar">
-      <input type="text" id="chat-input" placeholder="Posez votre question..." onkeydown="if(event.key === 'Enter') chatbot.sendMessage()">
+      <input type="text" id="chat-input" placeholder="Posez votre question..."
+        onkeydown="if(event.key === 'Enter') chatbot.sendMessage()">
       <button onclick="chatbot.sendMessage()" style="color: var(--primary-forest); font-weight: 700; padding: 0 8px;">
         ➤
       </button>
@@ -779,11 +915,19 @@
   <!-- Mobile Bottom Quick Navigation Bar (Sticky bottom on phone) -->
   <nav class="mobile-bottom-bar" aria-label="Navigation mobile">
     <a href="#hero" class="mobile-bottom-item active" id="mob-nav-home" onclick="app.setActiveMobileNav(this)">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+        <polyline points="9 22 9 12 15 12 15 22" />
+      </svg>
       <span>Accueil</span>
     </a>
-    <a href="#shop" class="mobile-bottom-item" id="mob-nav-shop" onclick="app.setActiveMobileNav(this); app.filterByCategory('all');">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+    <a href="#shop" class="mobile-bottom-item" id="mob-nav-shop"
+      onclick="app.setActiveMobileNav(this); app.filterByCategory('all');">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+        <path d="M3 6h18" />
+        <path d="M16 10a4 4 0 0 1-8 0" />
+      </svg>
       <span>Boutique</span>
     </a>
     <button class="mobile-bottom-item" onclick="skinQuiz.start()">
@@ -794,20 +938,29 @@
     </button>
     <button class="mobile-bottom-item" onclick="app.openAccount('wishlist')">
       <div style="position: relative;">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path
+            d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+        </svg>
         <span class="badge-count wishlist-count" id="mobile-wishlist-badge" style="top: -4px; right: -8px;">2</span>
       </div>
       <span>Favoris</span>
     </button>
     <button class="mobile-bottom-item" onclick="app.openCart()">
       <div style="position: relative;">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+          <path d="M3 6h18" />
+          <path d="M16 10a4 4 0 0 1-8 0" />
+        </svg>
         <span class="badge-count" id="mobile-cart-badge" style="top: -4px; right: -8px;">1</span>
       </div>
       <span>Panier</span>
     </button>
   </nav>
-
+  <!-- Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <script src="assets/js/supabase-client.js"></script>
   <!-- Core Application Scripts -->
   <script src="assets/js/data.js"></script>
   <script src="assets/js/store.js"></script>
@@ -817,4 +970,5 @@
   <script src="assets/js/app.js"></script>
 
 </body>
+
 </html>
